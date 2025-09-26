@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Store - Search & Filter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for jewelry..." class="search-input">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <!-- Logo -->
+            <div class="logo">
+                <h1>JEWELRY STORE</h1>
+            </div>
+            
+        </div>
+        
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Results Banner -->
+        <div class="results-banner">
+            <h2 id="resultsCount">Loading products...</h2>
+        </div>
+
+        <div class="content-container">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <!-- Categories -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        CATEGORIES
+                    </h3>
+                    <div class="filter-content" id="categoriesFilter">
+                        <label class="filter-item">
+                            <input type="checkbox" value="all" checked>
+                            <span>All Products</span>
+                        </label>
+                        <!-- Categories will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Availability -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        AVAILABILITY
+                    </h3>
+                    <div class="filter-content" id="availabilityFilter">
+                        <label class="filter-item">
+                            <input type="checkbox" value="in-stock" checked>
+                            <span>In Stock (<span id="inStockCount">0</span>)</span>
+                        </label>
+                        <label class="filter-item">
+                            <input type="checkbox" value="out-of-stock">
+                            <span>Out Of Stock (<span id="outOfStockCount">0</span>)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Range -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        PRICE
+                    </h3>
+                    <div class="filter-content">
+                        <div class="price-range">
+                            <div class="price-slider">
+                                <input type="range" id="priceRange" min="0" max="1000000" value="1000000" class="slider">
+                            </div>
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="₹ 0" value="0">
+                                <span>-</span>
+                                <input type="number" id="maxPrice" placeholder="₹ 1000000" value="1000000">
+                            </div>
+                            <button id="applyPrice" class="apply-btn">APPLY</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Materials -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        MATERIALS
+                    </h3>
+                    <div class="filter-content" id="materialsFilter">
+                        <!-- Materials will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Stone Types -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        STONE TYPES
+                    </h3>
+                    <div class="filter-content" id="stoneTypesFilter">
+                        <!-- Stone types will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        GENDER
+                    </h3>
+                    <div class="filter-content" id="genderFilter">
+                        <!-- Gender options will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Occasions -->
+                <div class="filter-section">
+                    <h3 class="filter-title">
+                        <i class="fas fa-chevron-down"></i>
+                        OCCASIONS
+                    </h3>
+                    <div class="filter-content" id="occasionsFilter">
+                        <!-- Occasions will be populated dynamically -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div id="productsGrid" class="products-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button id="loadMoreBtn" class="load-more-btn">Load More Products</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
