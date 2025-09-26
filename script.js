@@ -198,7 +198,7 @@ async function loadProducts(page = 1, append = false) {
         }
 
         // Always use products API since it supports both search and filters
-        const response = await fetch(`http://localhost:5500/api/products?${params}`);
+        const response = await fetch(`http://34.100.211.162:9081/api/products?${params}`);
         const data = await response.json();
 
         if (data.success) {
@@ -294,7 +294,7 @@ async function loadFilterOptions() {
             }
         }
         
-        const response = await fetch(`http://localhost:5500/api/filters?${params}`);
+        const response = await fetch(`http://34.100.211.162:9081/api/filters?${params}`);
         const data = await response.json();
 
         if (data.success) {
@@ -356,7 +356,7 @@ function handleSearch() {
 // Load search suggestions
 async function loadSearchSuggestions(query) {
     try {
-        const response = await fetch(`http://localhost:5500/api/suggestions?q=${encodeURIComponent(query)}&limit=8`);
+        const response = await fetch(`http://34.100.211.162:9081/api/suggestions?q=${encodeURIComponent(query)}&limit=8`);
         const data = await response.json();
         
         if (data.success && data.data.suggestions.length > 0) {
